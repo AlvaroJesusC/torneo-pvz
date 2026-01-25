@@ -226,11 +226,12 @@ body::after {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--text-secondary);
-    font-size: 0.8rem;
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 12px rgba(255, 255, 255, 0.4);
+    font-size: 1.1rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
     margin-right: 10px;
-    font-weight: bold;
+    font-weight: 900;
 }
 
 .team-group {
