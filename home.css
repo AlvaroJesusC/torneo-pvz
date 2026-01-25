@@ -121,7 +121,11 @@
 /* Mobile responsive for hero section */
 @media (max-width: 768px) {
     .hero-section {
-        padding: 60px 20px 40px 20px;
+        padding: 80px 20px 40px 20px;
+        /* Increased top padding to account for navbar */
+        width: 100%;
+        box-sizing: border-box;
+        /* Ensure padding is included in width */
     }
 
     .hero-title {
@@ -147,7 +151,7 @@
         flex-direction: column;
         align-items: center;
         width: 100%;
-        padding: 0 20px;
+        padding: 0;
         gap: 15px;
     }
 
@@ -155,55 +159,77 @@
         width: 100%;
         max-width: 320px;
         justify-content: center;
+        box-sizing: border-box;
     }
 }
 
 /* Mobile responsive for teams section */
 @media (max-width: 768px) {
     .teams-section {
-        padding: 60px 20px;
+        padding: 60px 10px;
+        /* Reduced side padding */
         overflow-x: hidden;
         width: 100%;
-        max-width: 100vw;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Explicitly center content */
     }
 
     .section-title {
         font-size: 2rem;
         margin-bottom: 40px;
+        width: 100%;
+        text-align: center;
     }
 
     .teams-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 0 10px;
-        width: 100%;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 30px !important;
+        padding: 0 !important;
+        width: 100% !important;
+        margin: 0 auto !important;
     }
 
     .team-card {
-        margin: 0 auto;
-        max-width: 400px;
-        width: calc(100% - 20px);
+        margin: 0 auto !important;
+        max-width: 340px !important;
+        /* Slightly smaller to prevent edge touching */
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
 }
 
 /* Mobile responsive for banned section */
 @media (max-width: 768px) {
     .banned-section {
-        padding: 60px 20px;
+        padding: 60px 10px;
         overflow-x: hidden;
         width: 100%;
-        max-width: 100vw;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .banned-list {
-        padding: 0 10px;
+        padding: 0;
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
     }
 
     .banned-item {
-        margin: 0 auto;
-        max-width: 400px;
-        width: calc(100% - 20px);
+        margin: 0;
+        max-width: 360px;
+        width: 100%;
+        box-sizing: border-box;
     }
 }
 
@@ -295,14 +321,19 @@
 }
 
 .teams-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 30px;
     max-width: 1400px;
     margin: 0 auto;
 }
 
 .team-card {
+    flex: 0 1 320px;
+    /* Base width 320px, can shrink but not grow excessively */
+    min-width: 280px;
+    /* Minimum width before breaking */
     background: rgba(255, 255, 255, 0.03);
     border: 2px solid rgba(16, 185, 129, 0.3);
     border-radius: 16px;

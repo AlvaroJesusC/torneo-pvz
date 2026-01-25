@@ -1,8 +1,16 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Target both team names and list items if needed, but user emphasized headers
+function initTextScroll() {
+    // Target both team names
     const elements = document.querySelectorAll('.team-name');
 
     elements.forEach(el => {
+        // Reset state for recalculation
+        el.classList.remove('is-long');
+        const wrapper = el.querySelector('.text-wrapper');
+        if (wrapper) {
+            // Unwrap temporary to measure correctly
+            el.innerText = wrapper.innerText;
+        }
+
         // Check overflow
         if (el.scrollWidth > el.clientWidth) {
             el.classList.add('is-long');
@@ -13,16 +21,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 el.innerHTML = `<span class="text-wrapper">${text}</span>`;
             }
 
-            const wrapper = el.querySelector('.text-wrapper');
-            const offset = wrapper.scrollWidth - el.clientWidth;
+            const activeWrapper = el.querySelector('.text-wrapper');
+            const offset = activeWrapper.scrollWidth - el.clientWidth;
 
             // Add a small buffer to the offset so it scrolls a bit past the end
-            el.style.setProperty('--scroll-offset', `-${offset + 10}px`);
+            el.style.setProperty('--scroll-offset', `-${offset + 20}px`);
         }
     });
+}
 
-    // Clean up old/sticking team-icon divs (those without images)
-    // This handles cases where encoding issues prevented direct replacement
+document.addEventListener('DOMContentLoaded', initTextScroll);
+window.addEventListener('load', initTextScroll);
+window.addEventListener('resize', () => {
+    // Debounce resize
+    clearTimeout(window.resizeTimer);
+    window.resizeTimer = setTimeout(initTextScroll, 200);
+});
+
+// Clean up icons on load
+document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.team-icon').forEach(icon => {
         if (!icon.querySelector('img')) {
             icon.remove();
