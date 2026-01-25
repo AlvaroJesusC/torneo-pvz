@@ -1,0 +1,110 @@
+/* Responsive Styles - ONLY FOR BRACKET PAGE */
+@media (max-width: 768px) {
+
+    /* Only apply horizontal scroll to bracket container */
+    body:has(.bracket-grid) {
+        overflow-x: hidden;
+    }
+
+    .app-container {
+        padding: 20px 10px;
+        overflow-x: auto;
+        overflow-y: visible;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .bracket-grid {
+        min-width: 1200px;
+        padding: 20px;
+    }
+
+    .column {
+        width: 250px;
+    }
+
+    .match-box {
+        width: 240px;
+        padding: 12px;
+    }
+
+    .match-num {
+        font-size: 0.9rem;
+        width: 30px;
+        height: 30px;
+    }
+
+    .team-name {
+        font-size: 0.9rem;
+    }
+
+    .team-controls {
+        gap: 6px;
+    }
+
+    .icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .header-title {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    .back-btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    /* Show scroll hint only on bracket page */
+    .app-container::after {
+        content: '← Desliza para ver más →';
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(16, 185, 129, 0.9);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        z-index: 100;
+        animation: fadeInOut 3s ease-in-out infinite;
+    }
+
+    @keyframes fadeInOut {
+
+        0%,
+        100% {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .bracket-grid {
+        min-width: 1000px;
+    }
+
+    .column {
+        width: 220px;
+    }
+
+    .match-box {
+        width: 210px;
+        padding: 10px;
+    }
+
+    .team-name {
+        font-size: 0.85rem;
+    }
+
+    .header-title {
+        font-size: 1.5rem;
+    }
+}
