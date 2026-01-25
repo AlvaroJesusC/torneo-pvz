@@ -1,21 +1,21 @@
 function initTextScroll() {
-    // Target both team names
+    // apunta a los nombres en los equipos
     const elements = document.querySelectorAll('.team-name');
 
     elements.forEach(el => {
-        // Reset state for recalculation
+        // resetea el estado para recalcular
         el.classList.remove('is-long');
         const wrapper = el.querySelector('.text-wrapper');
         if (wrapper) {
-            // Unwrap temporary to measure correctly
+            // quita el wrap para medir bien
             el.innerText = wrapper.innerText;
         }
 
-        // Check overflow
+        // chequea si desborda
         if (el.scrollWidth > el.clientWidth) {
             el.classList.add('is-long');
 
-            // Wrap text if not already wrapped
+            // envuelve el texto si no lo esta
             if (!el.querySelector('.text-wrapper')) {
                 const text = el.innerText;
                 el.innerHTML = `<span class="text-wrapper">${text}</span>`;
@@ -24,7 +24,7 @@ function initTextScroll() {
             const activeWrapper = el.querySelector('.text-wrapper');
             const offset = activeWrapper.scrollWidth - el.clientWidth;
 
-            // Add a small buffer to the offset so it scrolls a bit past the end
+            // añade un pequeño margen extra para que scrollee hasta el final
             el.style.setProperty('--scroll-offset', `-${offset + 20}px`);
         }
     });
@@ -33,12 +33,12 @@ function initTextScroll() {
 document.addEventListener('DOMContentLoaded', initTextScroll);
 window.addEventListener('load', initTextScroll);
 window.addEventListener('resize', () => {
-    // Debounce resize
+    // espera un poco al redimensionar
     clearTimeout(window.resizeTimer);
     window.resizeTimer = setTimeout(initTextScroll, 200);
 });
 
-// Clean up icons on load
+// limpia iconos al cargar
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.team-icon').forEach(icon => {
         if (!icon.querySelector('img')) {

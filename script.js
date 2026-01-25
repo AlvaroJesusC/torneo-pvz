@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     // =========================
-    // EDIT BUTTON (✏️ / 💾)
+    // boton editar
     // =========================
     document.querySelectorAll(".edit-btn").forEach(btn => {
         btn.addEventListener("click", (e) => {
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // =========================
-    // WIN BUTTON ✔
+    // boton ganar
     // =========================
     document.querySelectorAll(".win-btn").forEach(btn => {
         btn.addEventListener("click", (e) => {
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // =========================
-    // CLICK TEAM TO WIN
+    // click en equipo para ganar
     // =========================
     document.querySelectorAll(".team").forEach(team => {
         team.addEventListener("click", (e) => {
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // =========================
-    // MAIN WIN HANDLER
+    // manejador principal de victoria
     // =========================
     function handleWin(team) {
         const nameSpan = team.querySelector(".team-name");
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // =========================
-    // RESET FUTURE MATCHES
+    // resetea futuros partidos
     // =========================
     function resetFutureMatches(fromMatchId) {
         const affectedSlots = document.querySelectorAll(`[data-from="${fromMatchId}"]`);
@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // =========================
-// MODAL DE VICTORIA
+// modal de victoria
 // =========================
 function showVictoryModal(championName) {
     const modal = document.getElementById('victory-modal');
@@ -172,7 +172,7 @@ function closeVictoryModal() {
     modal.classList.remove('show');
 }
 
-// Cerrar modal al hacer click fuera del contenido
+// cerrar modal al hacer click fuera del contenido
 document.addEventListener('click', (e) => {
     const modal = document.getElementById('victory-modal');
     if (e.target === modal) {
@@ -180,7 +180,7 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Cerrar modal con tecla ESC
+// cerrar modal con tecla esc
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         closeVictoryModal();

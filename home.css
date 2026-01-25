@@ -1,4 +1,4 @@
-/* Hero Section */
+/* seccion hero */
 .hero-section {
     min-height: 100vh;
     display: flex;
@@ -118,7 +118,7 @@
     flex-wrap: wrap;
 }
 
-/* Mobile responsive for hero section */
+/* responsive movil para hero */
 @media (max-width: 768px) {
     .hero-section {
         padding: 80px 20px 40px 20px;
@@ -163,7 +163,7 @@
     }
 }
 
-/* Mobile responsive for teams section */
+/* responsive movil para equipos */
 @media (max-width: 768px) {
     .teams-section {
         padding: 60px 10px;
@@ -204,7 +204,7 @@
     }
 }
 
-/* Mobile responsive for banned section */
+/* responsive movil para prohibidos */
 @media (max-width: 768px) {
     .banned-section {
         padding: 60px 10px;
@@ -292,7 +292,7 @@
     transform: translateY(-3px);
 }
 
-/* Teams Section */
+/* seccion equipos */
 .teams-section {
     min-height: 100vh;
     padding: 80px 40px;
@@ -396,7 +396,7 @@
     /* Default state */
 }
 
-/* Scroll state overrides */
+/* overrides para estado de scroll */
 .team-name.is-long {
     text-overflow: clip;
     /* Remove ellipsis for scrolling */
@@ -483,7 +483,7 @@ html {
     margin-right: 8px;
 }
 
-/* Responsive */
+/* responsive */
 @media (max-width: 768px) {
     .hero-title {
         font-size: 3rem;
@@ -513,7 +513,7 @@ html {
     }
 }
 
-/* Banned Characters Section */
+/* seccion personajes prohibidos */
 .banned-section {
     min-height: 60vh;
     padding: 80px 40px 100px 40px;

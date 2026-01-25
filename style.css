@@ -131,7 +131,7 @@ body::after {
 }
 
 
-/* Fila de Encabezado */
+/* fila de encabezado */
 .bracket-header {
     display: flex;
     margin-bottom: 50px;
@@ -164,7 +164,7 @@ body::after {
     border-right: none;
 }
 
-/* Cuadrícula del Bracket */
+/* cuadricula del bracket */
 .bracket-grid {
     display: flex;
     justify-content: space-around;
@@ -200,7 +200,7 @@ body::after {
     padding-top: 240px;
 }
 
-/* Estilos de Caja de Partidas */
+/* estilos de caja de partidas */
 .match-box {
     position: relative;
     margin-bottom: 20px;
@@ -241,7 +241,7 @@ body::after {
     gap: 5px;
 }
 
-/* Estilos de Equipo */
+/* estilos de equipo */
 .team {
     padding: 6px 12px;
     border-radius: 6px;
@@ -364,7 +364,7 @@ body::after {
     opacity: 0.7;
 }
 
-/* Conectores SVG */
+/* conectores svg */
 .bracket-connectors {
     position: absolute;
     top: 0;
@@ -426,7 +426,7 @@ body::after {
     letter-spacing: 2px;
 }
 
-/* Modal de Victoria */
+/* modal de victoria */
 .victory-modal {
     display: none;
     position: fixed;
@@ -528,7 +528,7 @@ body::after {
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
 }
 
-/* Animaciones */
+/* animaciones */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -606,7 +606,7 @@ body::after {
     }
 }
 
-/* Efecto de Cursor Trail */
+/* efecto de cursor trail */
 .cursor-trail {
     position: fixed;
     width: 12px;

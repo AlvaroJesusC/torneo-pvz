@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <!-- Navigation Bar -->
+    <!-- barra de navegacion -->
     <nav class="navbar">
         <div class="navbar-container">
             <div class="navbar-logo">
@@ -30,7 +30,7 @@
 
     <div class="app-container">
         <a href="index.html" class="back-btn">← Volver</a>
-        <!-- Fila de Encabezado -->
+        <!-- encabezado de rondas -->
         <div class="bracket-header">
             <div class="header-item">Ronda 1</div>
             <div class="header-item">Ronda 2</div>
@@ -38,29 +38,29 @@
             <div class="header-item">Gran Final</div>
         </div>
 
-        <!-- Líneas Conectoras SVG -->
+        <!-- lineas conectoras svg -->
         <svg class="bracket-connectors" xmlns="http://www.w3.org/2000/svg">
-            <!-- Conectores de Play-in a Cuartos -->
+            <!-- conectores play-in a cuartos -->
             <line class="connector" x1="200" y1="150" x2="280" y2="150" />
             <line class="connector" x1="200" y1="470" x2="280" y2="470" />
 
-            <!-- Conectores de Cuartos a Semis (bracket superior) -->
+            <!-- conectores cuartos a semis arriba -->
             <path class="connector" d="M 560 120 L 620 120 L 620 240 L 680 240" fill="none" />
             <path class="connector" d="M 560 280 L 620 280 L 620 240 L 680 240" fill="none" />
 
-            <!-- Conectores de Cuartos a Semis (bracket inferior) -->
+            <!-- conectores cuartos a semis abajo -->
             <path class="connector" d="M 560 440 L 620 440 L 620 560 L 680 560" fill="none" />
             <path class="connector" d="M 560 600 L 620 600 L 620 560 L 680 560" fill="none" />
 
-            <!-- Conectores de Semis a Final -->
+            <!-- conectores semis a final -->
             <path class="connector" d="M 960 240 L 1020 240 L 1020 400 L 1080 400" fill="none" />
             <path class="connector" d="M 960 560 L 1020 560 L 1020 400 L 1080 400" fill="none" />
         </svg>
 
-        <!-- Cuadrícula Principal del Bracket -->
+        <!-- cuadricula principal -->
         <div class="bracket-grid">
 
-            <!-- COLUMN 1: Ronda 1 (Play-ins) -->
+            <!-- columna 1: ronda 1 (play-ins) -->
             <div class="column round-1">
                 <div class="match-box play-in" id="match-p1" style="margin-top: 26px;">
                     <div class="match-num">1</div>
@@ -119,7 +119,7 @@
                 </div>
             </div>
 
-            <!-- COLUMN 2: Ronda 2 (cuartos de final) -->
+            <!-- columna 2: ronda 2 (cuartos) -->
             <div class="column round-2">
                 <!-- CF 1 -->
                 <div class="match-box" id="match-q1" style="margin-top: 0px;">
@@ -233,7 +233,7 @@
                 </div>
             </div>
 
-            <!-- COLUMNA 3: Semifinales -->
+            <!-- Columna 3: semifinales -->
             <div class="column round-3">
                 <!-- Semi 1 -->
                 <div class="match-box" id="match-s1" style="margin-top: 80px;">
@@ -286,7 +286,7 @@
                 </div>
             </div>
 
-            <!-- COLUMNA 4: Final -->
+            <!-- columna 4: final -->
             <div class="column round-4">
                 <div class="match-box" id="match-final">
                     <div class="match-num">9</div>
@@ -320,7 +320,7 @@
 
         </div>
 
-        <!-- Modal de Victoria del Campeón -->
+        <!-- modal del campeon -->
         <div id="victory-modal" class="victory-modal">
             <div class="victory-content">
                 <div class="trophy-animation"><img src="assets/trofeo.svg" alt="trofeo" class="icon"></div>
