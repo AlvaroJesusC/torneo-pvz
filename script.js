@@ -16,12 +16,12 @@ document.addEventListener("DOMContentLoaded", () => {
             if (editing) {
                 // Save mode: disable editing and switch back to pencil
                 nameSpan.contentEditable = "false";
-                iconImg.src = "lapiz.svg";
+                iconImg.src = "assets/lapiz.svg";
             } else {
                 // Edit mode: enable editing and switch to save icon
                 nameSpan.contentEditable = "true";
                 nameSpan.focus();
-                iconImg.src = "save.svg";
+                iconImg.src = "assets/save.svg";
             }
         });
     });

@@ -425,7 +425,7 @@
     content: "";
     width: 1.2rem;
     height: 1.2rem;
-    background: url('user.svg') no-repeat center / contain;
+    background: url('assets/user.svg') no-repeat center / contain;
 }
 
 html {
