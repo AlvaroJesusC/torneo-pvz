@@ -1,33 +1,33 @@
-// Efecto de cursor con círculos que siguen al mouse
+// efecto de cursor con circulos siguiendo al mouse
 document.addEventListener('DOMContentLoaded', () => {
-    const colors = ['rgba(16, 185, 129, 0.6)', 'rgba(157, 78, 221, 0.6)']; // Verde y morado
+    const colors = ['rgba(16, 185, 129, 0.6)', 'rgba(157, 78, 221, 0.6)']; // verde y morado
     let colorIndex = 0;
     let lastTime = 0;
-    const throttleDelay = 50; // Milisegundos entre cada círculo
+    const throttleDelay = 50; // milisegundos entre cada circulo
 
     document.addEventListener('mousemove', (e) => {
         const currentTime = Date.now();
 
-        // Solo crear círculo si ha pasado suficiente tiempo
+        //  circulo si paso tiempo suficiente
         if (currentTime - lastTime < throttleDelay) {
             return;
         }
 
         lastTime = currentTime;
 
-        // Crear círculo
+        // crea el circulo
         const circle = document.createElement('div');
         circle.className = 'cursor-trail';
         circle.style.left = e.clientX + 'px';
         circle.style.top = e.clientY + 'px';
         circle.style.background = colors[colorIndex];
 
-        // Alternar entre verde y morado
+        // alterna colores
         colorIndex = (colorIndex + 1) % colors.length;
 
         document.body.appendChild(circle);
 
-        // Remover después de la animación
+        // quita despues de la animacion
         setTimeout(() => {
             circle.remove();
         }, 800);

@@ -265,6 +265,15 @@ body::after {
     border-bottom: 1px dashed transparent;
 }
 
+.team-score {
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-right: 10px;
+    font-size: 1.1rem;
+    min-width: 20px;
+    text-align: center;
+}
+
 .team-name[contenteditable="true"] {
     border-bottom: 1px dashed var(--accent-color);
     background: rgba(0, 0, 0, 0.3);
@@ -298,6 +307,11 @@ body::after {
     width: 24px;
     height: 24px;
     border-radius: 4px;
+}
+
+/* Ocultar controles en modo solo lectura */
+body.view-only .team-controls {
+    display: none !important;
 }
 
 .edit-btn .icon,
