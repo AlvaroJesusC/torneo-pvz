@@ -1,8 +1,7 @@
 const tournamentConfig = {
-    adminMode: false, // false para ocultar botones (modo espectador)
-
+    adminMode: false,
     matches: [
-        // --- RONDA 1 (Play-ins) ---
+        // --- RONDA 1 ---
         {
             id: "match-p1",
             // Equipo 1
@@ -22,7 +21,7 @@ const tournamentConfig = {
             team2_status: "L", team2_score: 0
         },
 
-        // --- RONDA 2 (Cuartos de Final) ---
+        // ---Cuartos de Final---
         {
             id: "match-q1",
             team1_desc: "Los Alquimistas", team1_status: "L", team1_score: 0,

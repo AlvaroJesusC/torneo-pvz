@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Reemplazar todos los botones de check
     document.querySelectorAll('.win-btn').forEach(btn => {
         if (btn.textContent.includes('✔')) {
             btn.innerHTML = '<img src="check.svg" class="icon" alt="Ganador">';
