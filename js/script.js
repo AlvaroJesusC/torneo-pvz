@@ -3,37 +3,16 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.tournamentConfig) {
         initTournamentState();
     }
-    document.querySelectorAll(".edit-btn").forEach(btn => {
-        btn.addEventListener("click", (e) => {
-            e.stopPropagation();
-            const team = btn.closest(".team");
-            const nameSpan = team.querySelector(".team-name");
-            const iconImg = btn.querySelector(".icon");
-            const editing = nameSpan.isContentEditable;
 
-            if (editing) {
-                nameSpan.contentEditable = "false";
-                iconImg.src = "assets/lapiz.svg";
-            } else {
-                nameSpan.contentEditable = "true";
-                nameSpan.focus();
-                iconImg.src = "assets/save.svg";
-            }
-        });
-    });
-
-    document.querySelectorAll(".win-btn").forEach(btn => {
-        btn.addEventListener("click", (e) => {
-            e.stopPropagation();
-            handleWin(btn.closest(".team"));
-        });
-    });
+    // Los botones de editar y ganar fueron eliminados
+    // Solo mantenemos el click en los equipos para futuras funcionalidades si es necesario
     document.querySelectorAll(".team").forEach(team => {
         team.addEventListener("click", (e) => {
+            // Evitar que se active si se hace click en un botón (como el botón de info)
             if (e.target.closest("button")) return;
-            const nameSpan = team.querySelector(".team-name");
-            if (nameSpan.contentEditable === "true") return;
-            handleWin(team);
+
+            // Aquí se puede agregar funcionalidad futura si es necesario
+            // Por ahora solo está como placeholder
         });
     });
 
@@ -78,6 +57,11 @@ function advanceWinner(fromMatchId, winnerName) {
             { transform: "scale(1)", filter: "brightness(1.4)" },
             { transform: "scale(1)", filter: "brightness(1)" }
         ], { duration: 300 });
+
+        // Agregar botón de info al equipo que avanzó
+        if (window.addInfoButtonToTeam) {
+            window.addInfoButtonToTeam(slot);
+        }
     });
 
     if (fromMatchId === "match-final") {
@@ -111,6 +95,15 @@ function resetFutureMatches(fromMatchId) {
             const nsSpan = ns.querySelector(".team-name");
             if (nsSpan) nsSpan.textContent = "—";
             ns.classList.remove("winner");
+
+            // Eliminar botón de info cuando se resetea
+            const controls = ns.querySelector(".team-controls");
+            if (controls) {
+                const infoBtn = controls.querySelector(".info-btn");
+                if (infoBtn) {
+                    infoBtn.remove();
+                }
+            }
         });
     });
 }

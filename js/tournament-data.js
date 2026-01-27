@@ -4,7 +4,7 @@
 //se vean reflejados en los resultados del torneo en la pagina web, solo eso.  
 
 const tournamentConfig = {
-    adminMode: false,
+    adminMode: true,
     matches: [
         // --- ROONDA 1 ---
         {

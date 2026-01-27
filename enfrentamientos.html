@@ -8,9 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="navbar.css">
-    <link rel="stylesheet" href="bracket-responsive.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/bracket-responsive.css">
+    <link rel="stylesheet" href="css/team-info-modal.css">
 </head>
 
 <body>
@@ -41,20 +42,20 @@
         <!-- conectar a svg de los enfrentamientos -->
         <svg class="bracket-connectors" xmlns="http://www.w3.org/2000/svg">
             <!-- conectores play-in a cuartos -->
-            <line class="connector" x1="200" y1="150" x2="280" y2="150" />
-            <line class="connector" x1="200" y1="470" x2="280" y2="470" />
+            <line class="connector" x1="200" y1="100" x2="280" y2="100" />
+            <line class="connector" x1="200" y1="460" x2="280" y2="460" />
 
             <!-- conectores cuartos a semis arriba -->
-            <path class="connector" d="M 560 120 L 620 120 L 620 240 L 680 240" fill="none" />
-            <path class="connector" d="M 560 280 L 620 280 L 620 240 L 680 240" fill="none" />
+            <path class="connector" d="M 560 80 L 620 80 L 620 200 L 680 200" fill="none" />
+            <path class="connector" d="M 560 240 L 620 240 L 620 200 L 680 200" fill="none" />
 
             <!-- conectores cuartos a semis abajo -->
-            <path class="connector" d="M 560 440 L 620 440 L 620 560 L 680 560" fill="none" />
-            <path class="connector" d="M 560 600 L 620 600 L 620 560 L 680 560" fill="none" />
+            <path class="connector" d="M 560 320 L 620 320 L 620 480 L 680 480" fill="none" />
+            <path class="connector" d="M 560 490 L 620 490 L 620 480 L 680 480" fill="none" />
 
             <!-- conectores semis a final -->
-            <path class="connector" d="M 960 240 L 1020 240 L 1020 400 L 1080 400" fill="none" />
-            <path class="connector" d="M 960 560 L 1020 560 L 1020 400 L 1080 400" fill="none" />
+            <path class="connector" d="M 960 200 L 1020 200 L 1020 340 L 1080 340" fill="none" />
+            <path class="connector" d="M 960 480 L 1020 480 L 1020 340 L 1080 340" fill="none" />
         </svg>
 
         <!-- cuadricula principal -->
@@ -67,52 +68,27 @@
                     <div class="team-group">
                         <div class="team" data-slot="8">
                             <span class="team-name" contenteditable="false">Vaso de leche</span>
-                            <div class="team-controls">
-                                <button class="win-btn" title="Marcar como ganador">
-                                    <img src="assets/check.svg" class="icon" alt="Ganador">
-                                </button>
-                                <button class="edit-btn" title="Editar nombre">
-                                    <img src="assets/lapiz.svg" class="icon" alt="Editar">
-                                </button>
-                            </div>
+                            <div class="team-controls"></div>
                         </div>
                         <div class="team" data-slot="9">
                             <span class="team-name" contenteditable="false">Delta Force</span>
                             <div class="team-controls">
-                                <button class="win-btn" title="Marcar como ganador">
-                                    <img src="assets/check.svg" class="icon" alt="Ganador">
-                                </button>
-                                <button class="edit-btn" title="Editar nombre">
-                                    <img src="assets/lapiz.svg" class="icon" alt="Editar">
-                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="match-box play-in" id="match-p2" style="margin-top: 254px;">
+                <div class="match-box play-in" id="match-p2" style="margin-top: 255px;">
                     <div class="match-num">2</div>
                     <div class="team-group">
                         <div class="team" data-slot="7">
                             <span class="team-name" contenteditable="false">Reyes del Cementerio</span>
                             <div class="team-controls">
-                                <button class="win-btn" title="Marcar como ganador">
-                                    <img src="assets/check.svg" class="icon" alt="Ganador">
-                                </button>
-                                <button class="edit-btn" title="Editar nombre">
-                                    <img src="assets/lapiz.svg" class="icon" alt="Editar">
-                                </button>
                             </div>
                         </div>
                         <div class="team" data-slot="10">
                             <span class="team-name" contenteditable="false">Héroes de la Huerta</span>
                             <div class="team-controls">
-                                <button class="win-btn" title="Marcar como ganador">
-                                    <img src="assets/check.svg" class="icon" alt="Ganador">
-                                </button>
-                                <button class="edit-btn" title="Editar nombre">
-                                    <img src="assets/lapiz.svg" class="icon" alt="Editar">
-                                </button>
                             </div>
                         </div>
                     </div>
@@ -127,106 +103,59 @@
                     <div class="team-group">
                         <div class="team" data-slot="1">
                             <span class="team-name" contenteditable="false">Los Alquimistas</span>
-                            <div class="team-controls">
-                                <button class="win-btn" title="Marcar como ganador">
-                                    <img src="assets/check.svg" class="icon" alt="Ganador">
-                                </button>
-                                <button class="edit-btn" title="Editar nombre">
-                                    <img src="assets/lapiz.svg" class="icon" alt="Editar">
-                                </button>
-                            </div>
+                            <div class="team-controls"></div>
                         </div>
                         <div class="team winner-slot" data-from="match-p1">
                             <span class="team-name">Ganador 1</span>
-                            <div class="team-controls">
-                                <button class="win-btn" title="Marcar como ganador">
-                                    <img src="assets/check.svg" class="icon" alt="Ganador">
-                                </button>
-                                <!-- Sin botón de editar para slots de ganador normalmente, pero lo dejamos para override manual -->
-                                <button class="edit-btn" title="Editar nombre">
-                                    <img src="assets/lapiz.svg" class="icon" alt="Editar">
-                                </button>
-                            </div>
+                            <div class="team-controls"></div>
                         </div>
                     </div>
                 </div>
 
                 <!-- CF 2 -->
-                <div class="match-box" id="match-q2" style="margin-top: 20px;">
+                <div class="match-box" id="match-q2" style="margin-top: 40px;">
                     <div class="match-num">3</div>
                     <div class="team-group">
                         <div class="team" data-slot="4">
                             <span class="team-name" contenteditable="false">ROT CARTEL</span>
-                            <div class="team-controls">
-                                <button class="win-btn" title="Marcar como ganador">
-                                    <img src="assets/check.svg" class="icon" alt="Ganador">
-                                </button>
-                                <button class="edit-btn" title="Editar nombre">
-                                    <img src="assets/lapiz.svg" class="icon" alt="Editar">
-                                </button>
-                            </div>
+                            <div class="team-controls"></div>
                         </div>
                         <div class="team" data-slot="5">
                             <span class="team-name" contenteditable="false">La Raza Dominante</span>
-                            <div class="team-controls">
-                                <button class="win-btn" title="Marcar como ganador">
-                                    <img src="assets/check.svg" class="icon" alt="Ganador">
-                                </button>
-                                <button class="edit-btn" title="Editar nombre">
-                                    <img src="assets/lapiz.svg" class="icon" alt="Editar">
-                                </button>
-                            </div>
+                            <div class="team-controls"></div>
                         </div>
                     </div>
                 </div>
 
                 <!-- CF 3 -->
-                <div class="match-box" id="match-q3" style="margin-top: 60px;">
+                <div class="match-box" id="match-q3" style="margin-top: 40px;">
                     <div class="match-num">6</div>
                     <div class="team-group">
                         <div class="team" data-slot="2">
                             <span class="team-name" contenteditable="false">JFRYZ</span>
                             <div class="team-controls">
-                                <button class="win-btn" title="Marcar como ganador"><img src="assets/check.svg"
-                                        class="icon" alt="Ganador"></button>
-                                <button class="edit-btn" title="Editar nombre"><img src="assets/lapiz.svg" class="icon"
-                                        alt="Editar"></button>
                             </div>
                         </div>
                         <div class="team winner-slot" data-from="match-p2">
                             <span class="team-name">Ganador 2</span>
                             <div class="team-controls">
-                                <button class="win-btn" title="Marcar como ganador">
-                                    <img src="assets/check.svg" class="icon" alt="Ganador">
-                                </button>
-                                <button class="edit-btn" title="Editar nombre">
-                                    <img src="assets/lapiz.svg" class="icon" alt="Editar">
-                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- CF 4 -->
-                <div class="match-box" id="match-q4" style="margin-top: 20px;">
+                <div class="match-box" id="match-q4" style="margin-top: 10px;">
                     <div class="match-num">4</div>
                     <div class="team-group">
                         <div class="team" data-slot="3">
                             <span class="team-name" contenteditable="false">Al Qaeda</span>
                             <div class="team-controls">
-                                <button class="win-btn" title="Marcar como ganador"><img src="assets/check.svg"
-                                        class="icon" alt="Ganador"></button>
-                                <button class="edit-btn" title="Editar nombre"><img src="assets/lapiz.svg" class="icon"
-                                        alt="Editar"></button>
                             </div>
                         </div>
                         <div class="team" data-slot="6">
                             <span class="team-name" contenteditable="false">Siege Front</span>
                             <div class="team-controls">
-                                <button class="win-btn" title="Marcar como ganador"><img src="assets/check.svg"
-                                        class="icon" alt="Ganador"></button>
-                                <button class="edit-btn" title="Editar nombre"><img src="assets/lapiz.svg" class="icon"
-                                        alt="Editar"></button>
                             </div>
                         </div>
                     </div>
@@ -242,44 +171,28 @@
                         <div class="team winner-slot" data-from="match-q1">
                             <span class="team-name">Ganador 5</span>
                             <div class="team-controls">
-                                <button class="win-btn" title="Marcar como ganador"><img src="assets/check.svg"
-                                        class="icon" alt="Ganador"></button>
-                                <button class="edit-btn" title="Editar nombre"><img src="assets/lapiz.svg" class="icon"
-                                        alt="Editar"></button>
                             </div>
                         </div>
                         <div class="team winner-slot" data-from="match-q2">
                             <span class="team-name">Ganador 3</span>
                             <div class="team-controls">
-                                <button class="win-btn" title="Marcar como ganador"><img src="assets/check.svg"
-                                        class="icon" alt="Ganador"></button>
-                                <button class="edit-btn" title="Editar nombre"><img src="assets/lapiz.svg" class="icon"
-                                        alt="Editar"></button>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- ssemi 2 -->
-                <div class="match-box" id="match-s2" style="margin-top: 160px;">
+                <div class="match-box" id="match-s2" style="margin-top: 140px;">
                     <div class="match-num">8</div>
                     <div class="team-group">
                         <div class="team winner-slot" data-from="match-q3">
                             <span class="team-name">Ganador 6</span>
                             <div class="team-controls">
-                                <button class="win-btn" title="Marcar como ganador"><img src="assets/check.svg"
-                                        class="icon" alt="Ganador"></button>
-                                <button class="edit-btn" title="Editar nombre"><img src="assets/lapiz.svg" class="icon"
-                                        alt="Editar"></button>
                             </div>
                         </div>
                         <div class="team winner-slot" data-from="match-q4">
                             <span class="team-name">Ganador 4</span>
                             <div class="team-controls">
-                                <button class="win-btn" title="Marcar como ganador"><img src="assets/check.svg"
-                                        class="icon" alt="Ganador"></button>
-                                <button class="edit-btn" title="Editar nombre"><img src="assets/lapiz.svg" class="icon"
-                                        alt="Editar"></button>
                             </div>
                         </div>
                     </div>
@@ -294,19 +207,11 @@
                         <div class="team winner-slot" data-from="match-s1">
                             <span class="team-name">Finalista 1</span>
                             <div class="team-controls">
-                                <button class="win-btn" title="Marcar como ganador"><img src="assets/check.svg"
-                                        class="icon" alt="Ganador"></button>
-                                <button class="edit-btn" title="Editar nombre"><img src="assets/lapiz.svg" class="icon"
-                                        alt="Editar"></button>
                             </div>
                         </div>
                         <div class="team winner-slot" data-from="match-s2">
                             <span class="team-name">Finalista 2</span>
                             <div class="team-controls">
-                                <button class="win-btn" title="Marcar como ganador"><img src="assets/check.svg"
-                                        class="icon" alt="Ganador"></button>
-                                <button class="edit-btn" title="Editar nombre"><img src="assets/lapiz.svg" class="icon"
-                                        alt="Editar"></button>
                             </div>
                         </div>
                     </div>
@@ -332,16 +237,25 @@
 
     </div>
 
+    <!-- modal de información del equipo -->
+    <div id="team-info-modal" class="team-info-modal">
+        <div class="team-info-content">
+            <!-- El contenido se genera dinámicamente con JavaScript -->
+        </div>
+    </div>
+
     <!-- footer -->
     <footer class="footer">
         Página creada por <span>AlvaroJesus</span>
     </footer>
-    <script src="cursor-trail.js"></script>
-    <script src="icons.js"></script>
-    <script src="connectors.js"></script>
-    <script src="tournament-data.js"></script>
-    <script src="script.js"></script>
-    <script src="floating-text.js"></script>
+    <script src="js/cursor-trail.js"></script>
+    <script src="js/icons.js"></script>
+    <script src="js/connectors.js"></script>
+    <script src="js/tournament-data.js"></script>
+    <script src="js/team-info-data.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/team-info-modal.js"></script>
+    <script src="js/floating-text.js"></script>
 </body>
 
 </html>
