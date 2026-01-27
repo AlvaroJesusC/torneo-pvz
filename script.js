@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.tournamentConfig) {
         initTournamentState();
     }
-    // boton Editar
     document.querySelectorAll(".edit-btn").forEach(btn => {
         btn.addEventListener("click", (e) => {
             e.stopPropagation();
@@ -23,15 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // boton Ganar
     document.querySelectorAll(".win-btn").forEach(btn => {
         btn.addEventListener("click", (e) => {
             e.stopPropagation();
             handleWin(btn.closest(".team"));
         });
     });
-
-    // click en equipo
     document.querySelectorAll(".team").forEach(team => {
         team.addEventListener("click", (e) => {
             if (e.target.closest("button")) return;
@@ -119,7 +115,6 @@ function resetFutureMatches(fromMatchId) {
     });
 }
 
-// Modal functions
 function showVictoryModal(championName) {
     const modal = document.getElementById('victory-modal');
     const championNameEl = document.getElementById('champion-name');
@@ -192,11 +187,9 @@ function initTournamentState() {
     }
 }
 
-// helper para actualizar/crear puntuacion en el DOM
 function updateTeamScore(teamNode, score) {
     let scoreEl = teamNode.querySelector('.team-score');
 
-    // Si no existe, lo creamos
     if (!scoreEl) {
         scoreEl = document.createElement('span');
         scoreEl.className = 'team-score';

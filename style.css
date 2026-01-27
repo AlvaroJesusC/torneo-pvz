@@ -645,7 +645,6 @@ body.view-only .team-controls {
     }
 }
 
-/* footer */
 .footer {
     text-align: center;
     padding: 30px;
@@ -657,9 +656,47 @@ body.view-only .team-controls {
     width: 100%;
     position: relative;
     z-index: 10;
+    box-sizing: border-box;
 }
 
 .footer span {
     color: var(--accent-color);
     font-weight: 700;
+}
+
+.floating-text {
+    position: fixed;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--accent-color);
+    opacity: 0.01;
+    pointer-events: none;
+    z-index: 0;
+    font-family: var(--font-main);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    animation: floatRandom 15s infinite ease-in-out;
+    user-select: none;
+}
+
+@keyframes floatRandom {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(30vw, -20vh) rotate(5deg);
+    }
+
+    50% {
+        transform: translate(-20vw, 30vh) rotate(-3deg);
+    }
+
+    75% {
+        transform: translate(40vw, 10vh) rotate(7deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
 }
