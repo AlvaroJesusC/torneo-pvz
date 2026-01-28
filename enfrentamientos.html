@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/bracket-responsive.css">
     <link rel="stylesheet" href="css/team-info-modal.css">
+    <link rel="stylesheet" href="css/help-card.css">
 </head>
 
 <body>
@@ -244,6 +245,17 @@
         </div>
     </div>
 
+    <!-- tarjeta de ayuda -->
+    <div id="help-card" class="help-card">
+        <button class="help-card-close" onclick="closeHelpCard()">✕</button>
+        <div class="help-card-content">
+            <p class="help-card-text">
+                Click en <img src="assets/info.svg" class="help-icon-inline" alt="info"> para ver la información de los
+                equipos.
+            </p>
+        </div>
+    </div>
+
     <!-- footer -->
     <footer class="footer">
         Página creada por <span>AlvaroJesus</span>
@@ -256,6 +268,7 @@
     <script src="js/script.js"></script>
     <script src="js/team-info-modal.js"></script>
     <script src="js/floating-text.js"></script>
+    <script src="js/help-card.js"></script>
 </body>
 
 </html>
