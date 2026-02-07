@@ -135,7 +135,7 @@ const teamInfoData = {
             "Metzael"
         ],
         substitutes: [
-            "Mig"
+            "Miguel"
         ]
     },
     "JFRYZ": {
