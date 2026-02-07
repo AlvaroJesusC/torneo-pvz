@@ -58,9 +58,9 @@ function advanceWinner(fromMatchId, winnerName) {
             { transform: "scale(1)", filter: "brightness(1)" }
         ], { duration: 300 });
 
-        // Agregar botón de info al equipo que avanzó
+        // Agregar/actualizar botón de info al equipo que avanzó (habilitado)
         if (window.addInfoButtonToTeam) {
-            window.addInfoButtonToTeam(slot);
+            window.addInfoButtonToTeam(slot, true);
         }
     });
 

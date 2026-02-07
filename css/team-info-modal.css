@@ -33,6 +33,29 @@
     transform: scale(1.1);
 }
 
+/* Estado deshabilitado del botón de información */
+.info-btn.disabled {
+    background: rgba(192, 192, 192, 0.1);
+    border: 1px solid rgba(192, 192, 192, 0.2);
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.info-btn.disabled:hover {
+    background: rgba(192, 192, 192, 0.1);
+    border-color: rgba(192, 192, 192, 0.2);
+    transform: none;
+    box-shadow: none;
+}
+
+.info-btn.disabled .info-icon {
+    filter: grayscale(90%);
+}
+
+.info-btn.disabled:hover .info-icon {
+    transform: none;
+}
+
 /* Modal de información del equipo */
 .team-info-modal {
     display: none;
@@ -268,6 +291,66 @@
         transform: scale(1);
         opacity: 1;
     }
+}
+
+/* Notificación para botón deshabilitado */
+.disabled-info-notification {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background: linear-gradient(135deg, rgba(20, 20, 30, 0.98), rgba(30, 30, 40, 0.98));
+    border: 2px solid rgba(255, 193, 7, 0.6);
+    border-radius: 10px;
+    padding: 15px 25px;
+    max-width: 320px;
+    z-index: 10001;
+    box-shadow:
+        0 0 30px rgba(255, 193, 7, 0.3),
+        0 0 60px rgba(255, 193, 7, 0.15),
+        inset 0 0 20px rgba(255, 193, 7, 0.05);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.disabled-info-notification.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
+}
+
+.disabled-info-notification .notification-icon {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.disabled-info-notification .lock-icon {
+    width: 48px;
+    height: 48px;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 0 8px rgba(255, 193, 7, 0.5));
+}
+
+.disabled-info-notification .notification-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #ffc107;
+    text-align: center;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-shadow: 0 0 8px rgba(255, 193, 7, 0.5);
+}
+
+.disabled-info-notification .notification-message {
+    font-size: 0.8rem;
+    color: var(--text-primary);
+    text-align: center;
+    line-height: 1.4;
+    margin: 0;
 }
 
 /* Responsive */
