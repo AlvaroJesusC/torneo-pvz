@@ -149,11 +149,12 @@ const teamInfoData = {
             "ItsMeYuniel",
             "GeometrycoLoky",
             "Joaco_Op",
-            "Jusst_Zb"
+            "yBecx17"
         ],
         substitutes: [
             "Changovm",
-            "Ford~"
+            "Ford~",
+            "Jusst_Zb"
         ]
     },
     "Al Qaeda": {
