@@ -2,10 +2,11 @@ function createFloatingText() {
     const container = document.body;
 
     const words = [
-        'Torneo de Peciales'
+        'Torneo de Peciales',
+        'Johan PECIAL'
     ];
 
-    const numberOfTexts = 1
+    const numberOfTexts = 2
 
     for (let i = 0; i < numberOfTexts; i++) {
         const floatingText = document.createElement('div');
