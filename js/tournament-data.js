@@ -11,10 +11,10 @@ const tournamentConfig = {
             id: "match-p1",
             // equipo 1
             team1_name: "Vaso de leche",
-            team1_status: "L", team1_score: 0,
+            team1_status: "W", team1_score: 2,
             // equipo 2
             team2_name: "Delta Force",
-            team2_status: "L", team2_score: 0
+            team2_status: "L", team2_score: 1
         },
         {
             id: "match-p2",
