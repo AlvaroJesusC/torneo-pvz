@@ -22,6 +22,7 @@ function showCancellationOverlay() {
         hasta nuevo aviso
         PECIALES XD</p>
         <p class="cancellation-subtitle"> A ver que deciden o ya fue nose xd</p>
+        <p class="cancellation-subtitle"> Johan Pecial</p>
     `;
 
     overlay.appendChild(message);
