@@ -36,41 +36,8 @@ const teamInfoData = {
             "RDC_Destructor"
         ]
     },
-    "La Raza Dominante": {
-        fullName: "LA RAZA DOMINANTE (RD)",
-        logo: "logos/rd.png",
-        representatives: [
-            "RD_TTVraptordras",
-            "RD_Aventurero2399"
-        ],
-        members: [
-            "RD_2anyelus22",
-            "RD_ghost",
-            "RD_Robuko"
-        ],
-        substitutes: [
-            "RD_irubias",
-            "RD_mia-chan",
-            "RD_ESCARCHA_tc",
-            "RD_Leo_k_ASE"
-        ]
-    },
-    "ROT CARTEL": {
-        fullName: "ROT CARTEL",
-        logo: "logos/rotCartel.png",
-        representatives: [
-            "DinoNugget3",
-            "ixnoobwarferO"
-        ],
-        members: [
-            "GOWTHERPAL A",
-            "JhonLemond",
-            "Antoniprr"
-        ],
-        substitutes: [
-            "TacoDcheetosssss"
-        ]
-    },
+
+
     "Vaso de leche": {
         fullName: "Vaso de Leche",
         logo: "logos/vasoDeLeche.jpg",
@@ -78,33 +45,15 @@ const teamInfoData = {
             "LuckyjamonadaBv"
         ],
         members: [
-            "zMuld4nHzz",
-            "zMuld4nHzzz",
-            "itsMeNetoMrda",
-            "Rodozombiotico"
+            "EKC_M4Th1aS_CH",
+            "EKC_NEW_ERA_CH",
+            "EKC_PANCONJALEA_CH",
+            "EKC_NetoMrda",
+            "EKC_yeisonzZZ"
         ],
-        substitutes: [
-            "pvz_in2025_lol",
-            "zMuld4nHz"
-        ]
+        substitutes: []
     },
-    "Delta Force": {
-        fullName: "Delta Force",
-        logo: "logos/deltaForce.jpg",
-        representatives: [
-            "NA"
-        ],
-        members: [
-            "ITSJuan",
-            "Michael_okkotsu",
-            "Omjok",
-            "PinzaF1",
-            "çhåøs"
-        ],
-        substitutes: [
-            "its_alexander"
-        ]
-    },
+
     "Héroes de la Huerta": {
         fullName: "Héroes de la Huerta",
         logo: "logos/heroesde.png",

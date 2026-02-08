@@ -34,80 +34,41 @@
         <a href="index.html" class="back-btn">← Volver</a>
         <!-- encabezado de rondas -->
         <div class="bracket-header">
-            <div class="header-item">Ronda 1</div>
-            <div class="header-item">Ronda 2</div>
+            <div class="header-item">Cuartos de Final</div>
             <div class="header-item">Semifinales</div>
             <div class="header-item">Gran Final</div>
         </div>
 
         <!-- conectar a svg de los enfrentamientos -->
         <svg class="bracket-connectors" xmlns="http://www.w3.org/2000/svg">
-            <!-- conectores play-in a cuartos -->
-            <line class="connector" x1="200" y1="100" x2="280" y2="100" />
-            <line class="connector" x1="200" y1="460" x2="280" y2="460" />
-
             <!-- conectores cuartos a semis arriba -->
-            <path class="connector" d="M 560 80 L 620 80 L 620 200 L 680 200" fill="none" />
-            <path class="connector" d="M 560 240 L 620 240 L 620 200 L 680 200" fill="none" />
+            <path class="connector" d="M 280 60 L 340 60 L 340 120 L 400 120" fill="none" />
+            <path class="connector" d="M 280 180 L 340 180 L 340 120 L 400 120" fill="none" />
 
             <!-- conectores cuartos a semis abajo -->
-            <path class="connector" d="M 560 320 L 620 320 L 620 480 L 680 480" fill="none" />
-            <path class="connector" d="M 560 490 L 620 490 L 620 480 L 680 480" fill="none" />
+            <path class="connector" d="M 280 300 L 340 300 L 340 360 L 400 360" fill="none" />
+            <path class="connector" d="M 280 420 L 340 420 L 340 360 L 400 360" fill="none" />
 
             <!-- conectores semis a final -->
-            <path class="connector" d="M 960 200 L 1020 200 L 1020 340 L 1080 340" fill="none" />
-            <path class="connector" d="M 960 480 L 1020 480 L 1020 340 L 1080 340" fill="none" />
+            <path class="connector" d="M 680 120 L 740 120 L 740 240 L 800 240" fill="none" />
+            <path class="connector" d="M 680 360 L 740 360 L 740 240 L 800 240" fill="none" />
         </svg>
 
         <!-- cuadricula principal -->
         <div class="bracket-grid">
 
-            <!-- columna 1: ronda 1 (play-ins) -->
+            <!-- columna 1: cuartos de final -->
             <div class="column round-1">
-                <div class="match-box play-in" id="match-p1" style="margin-top: 26px;">
+                <!-- CF 1 -->
+                <div class="match-box" id="match-q1" style="margin-top: 0px;">
                     <div class="match-num">1</div>
                     <div class="team-group">
-                        <div class="team" data-slot="8">
+                        <div class="team" data-slot="1">
                             <span class="team-name" contenteditable="false">Vaso de leche</span>
                             <div class="team-controls"></div>
                         </div>
-                        <div class="team" data-slot="9">
-                            <span class="team-name" contenteditable="false">Delta Force</span>
-                            <div class="team-controls">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="match-box play-in" id="match-p2" style="margin-top: 255px;">
-                    <div class="match-num">2</div>
-                    <div class="team-group">
-                        <div class="team" data-slot="7">
-                            <span class="team-name" contenteditable="false">Reyes del Cementerio</span>
-                            <div class="team-controls">
-                            </div>
-                        </div>
-                        <div class="team" data-slot="10">
-                            <span class="team-name" contenteditable="false">Héroes de la Huerta</span>
-                            <div class="team-controls">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- columna 2: ronda 2 (cuartos) -->
-            <div class="column round-2">
-                <!-- CF 1 -->
-                <div class="match-box" id="match-q1" style="margin-top: 0px;">
-                    <div class="match-num">5</div>
-                    <div class="team-group">
-                        <div class="team" data-slot="1">
+                        <div class="team" data-slot="2">
                             <span class="team-name" contenteditable="false">Los Alquimistas</span>
-                            <div class="team-controls"></div>
-                        </div>
-                        <div class="team winner-slot" data-from="match-p1">
-                            <span class="team-name">Ganador 1</span>
                             <div class="team-controls"></div>
                         </div>
                     </div>
@@ -115,14 +76,14 @@
 
                 <!-- CF 2 -->
                 <div class="match-box" id="match-q2" style="margin-top: 40px;">
-                    <div class="match-num">3</div>
+                    <div class="match-num">2</div>
                     <div class="team-group">
-                        <div class="team" data-slot="4">
-                            <span class="team-name" contenteditable="false">ROT CARTEL</span>
+                        <div class="team" data-slot="3">
+                            <span class="team-name" contenteditable="false">Reyes del Cementerio</span>
                             <div class="team-controls"></div>
                         </div>
-                        <div class="team" data-slot="5">
-                            <span class="team-name" contenteditable="false">La Raza Dominante</span>
+                        <div class="team" data-slot="4">
+                            <span class="team-name" contenteditable="false">Héroes de la Huerta</span>
                             <div class="team-controls"></div>
                         </div>
                     </div>
@@ -130,90 +91,80 @@
 
                 <!-- CF 3 -->
                 <div class="match-box" id="match-q3" style="margin-top: 40px;">
-                    <div class="match-num">6</div>
+                    <div class="match-num">3</div>
                     <div class="team-group">
-                        <div class="team" data-slot="2">
+                        <div class="team" data-slot="5">
                             <span class="team-name" contenteditable="false">JFRYZ</span>
-                            <div class="team-controls">
-                            </div>
+                            <div class="team-controls"></div>
                         </div>
-                        <div class="team winner-slot" data-from="match-p2">
-                            <span class="team-name">Ganador 2</span>
-                            <div class="team-controls">
-                            </div>
+                        <div class="team" data-slot="6">
+                            <span class="team-name" contenteditable="false">—</span>
+                            <div class="team-controls"></div>
                         </div>
                     </div>
                 </div>
 
                 <!-- CF 4 -->
-                <div class="match-box" id="match-q4" style="margin-top: 10px;">
+                <div class="match-box" id="match-q4" style="margin-top: 40px;">
                     <div class="match-num">4</div>
                     <div class="team-group">
-                        <div class="team" data-slot="3">
+                        <div class="team" data-slot="7">
                             <span class="team-name" contenteditable="false">Al Qaeda</span>
-                            <div class="team-controls">
-                            </div>
+                            <div class="team-controls"></div>
                         </div>
-                        <div class="team" data-slot="6">
+                        <div class="team" data-slot="8">
                             <span class="team-name" contenteditable="false">Siege Front</span>
-                            <div class="team-controls">
-                            </div>
+                            <div class="team-controls"></div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- columna 3: semifinales -->
-            <div class="column round-3">
+            <!-- columna 2: semifinales -->
+            <div class="column round-2">
                 <!-- Semi 1 -->
-                <div class="match-box" id="match-s1" style="margin-top: 80px;">
-                    <div class="match-num">7</div>
+                <div class="match-box" id="match-s1" style="margin-top: 40px;">
+                    <div class="match-num">5</div>
                     <div class="team-group">
                         <div class="team winner-slot" data-from="match-q1">
-                            <span class="team-name">Ganador 5</span>
-                            <div class="team-controls">
-                            </div>
+                            <span class="team-name">Ganador 1</span>
+                            <div class="team-controls"></div>
                         </div>
                         <div class="team winner-slot" data-from="match-q2">
-                            <span class="team-name">Ganador 3</span>
-                            <div class="team-controls">
-                            </div>
+                            <span class="team-name">Ganador 2</span>
+                            <div class="team-controls"></div>
                         </div>
                     </div>
                 </div>
 
-                <!-- ssemi 2 -->
-                <div class="match-box" id="match-s2" style="margin-top: 140px;">
-                    <div class="match-num">8</div>
+                <!-- Semi 2 -->
+                <div class="match-box" id="match-s2" style="margin-top: 80px;">
+                    <div class="match-num">6</div>
                     <div class="team-group">
                         <div class="team winner-slot" data-from="match-q3">
-                            <span class="team-name">Ganador 6</span>
-                            <div class="team-controls">
-                            </div>
+                            <span class="team-name">Ganador 3</span>
+                            <div class="team-controls"></div>
                         </div>
                         <div class="team winner-slot" data-from="match-q4">
                             <span class="team-name">Ganador 4</span>
-                            <div class="team-controls">
-                            </div>
+                            <div class="team-controls"></div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- columna 4: final -->
-            <div class="column round-4">
-                <div class="match-box" id="match-final">
-                    <div class="match-num">9</div>
+            <!-- columna 3: final -->
+            <div class="column round-3">
+                <div class="match-box" id="match-final" style="margin-top: 120px;">
+                    <div class="match-num">7</div>
                     <div class="team-group">
                         <div class="team winner-slot" data-from="match-s1">
                             <span class="team-name">Finalista 1</span>
-                            <div class="team-controls">
-                            </div>
+                            <div class="team-controls"></div>
                         </div>
                         <div class="team winner-slot" data-from="match-s2">
                             <span class="team-name">Finalista 2</span>
-                            <div class="team-controls">
-                            </div>
+                            <div class="team-controls"></div>
                         </div>
                     </div>
                 </div>
@@ -265,6 +216,7 @@
     <script src="js/connectors.js"></script>
     <script src="js/tournament-data.js"></script>
     <script src="js/team-info-data.js"></script>
+    <script src="js/cancellation.js"></script>
     <script src="js/script.js"></script>
     <script src="js/team-info-modal.js"></script>
     <script src="js/floating-text.js"></script>
