@@ -23,6 +23,8 @@ function showCancellationOverlay() {
         PECIALES XD</p>
         <p class="cancellation-subtitle"> A ver que deciden o ya fue nose xd</p>
         <p class="cancellation-subtitle"> Johan Pecial</p>
+        <p class="Ordenes de la Yunisita</p>
+
     `;
 
     overlay.appendChild(message);
