@@ -84,7 +84,7 @@ const teamInfoData = {
             "Metzael"
         ],
         substitutes: [
-            "Miguel"
+            "Mig"
         ]
     },
     "JFRYZ": {
@@ -98,12 +98,11 @@ const teamInfoData = {
             "ItsMeYuniel",
             "GeometrycoLoky",
             "Joaco_Op",
-            "yBecx17"
+            "Jusst_Zb"
         ],
         substitutes: [
             "Changovm",
-            "Ford~",
-            "Jusst_Zb"
+            "Ford~"
         ]
     },
     "Delta Force": {
@@ -146,16 +145,16 @@ const teamInfoData = {
         fullName: "ROT CARTEL",
         logo: "logos/rotCartel.png",
         representatives: [
-            "Cajaplata"
+            "DinoNugget3",
+            "ixnoobwarferO"
         ],
         members: [
-            "Mr Noise",
-            "Toñito",
-            "midfleece"
+            "GOWTHERPALA",
+            "JhonLemond",
+            "Antoniprr"
         ],
         substitutes: [
-            "TheErick",
-            "Lobos FC"
+            "TacoDcheetosssss"
         ]
     },
     "Al Qaeda": {
