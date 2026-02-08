@@ -5,26 +5,38 @@
 
 const tournamentConfig = {
     adminMode: true,
-    tournamentCancelled: 1, // 0 = Torneo activo, 1 = Torneo cancelado
+    tournamentCancelled: 0, // 0 = Torneo activo, 1 = Torneo cancelado
     matches: [
-        // --- CUARTOS DE FINAL ---
+        // --- RONDA 1 (Preliminares) ---
         {
-            id: "match-q1",
-            team1_name: "Vaso de leche", team1_status: "L", team1_score: 0,
-            team2_name: "Los Alquimistas", team2_status: "L", team2_score: 0
+            id: "match-r1-1",
+            team1_name: "Vaso de leche", team1_status: "W", team1_score: 2,
+            team2_name: "Delta Force", team2_status: "L", team2_score: 1
         },
         {
-            id: "match-q2",
+            id: "match-r1-2",
             team1_name: "Reyes del Cementerio", team1_status: "L", team1_score: 0,
             team2_name: "Héroes de la Huerta", team2_status: "L", team2_score: 0
         },
+
+        // --- RONDA 2 ---
         {
-            id: "match-q3",
-            team1_name: "JFRYZ", team1_status: "L", team1_score: 0,
-            team2_name: "—", team2_status: "L", team2_score: 0
+            id: "match-r2-1",
+            team1_name: "Los Alquimistas", team1_status: "L", team1_score: 0,
+            team1_desc: "Ganador 1", team2_status: "L", team2_score: 0
         },
         {
-            id: "match-q4",
+            id: "match-r2-2",
+            team1_name: "ROT CARTEL", team1_status: "L", team1_score: 0,
+            team2_name: "La Raza Dominante", team2_status: "L", team2_score: 0
+        },
+        {
+            id: "match-r2-3",
+            team1_name: "JFRYZ", team1_status: "L", team1_score: 0,
+            team1_desc: "Ganador 2", team2_status: "L", team2_score: 0
+        },
+        {
+            id: "match-r2-4",
             team1_name: "Al Qaeda", team1_status: "L", team1_score: 0,
             team2_name: "Siege Front", team2_status: "L", team2_score: 0
         },
@@ -32,13 +44,13 @@ const tournamentConfig = {
         // --- SEMIFINALES ---
         {
             id: "match-s1",
-            team1_desc: "Ganador Q1", team1_status: "L", team1_score: 0,
-            team2_desc: "Ganador Q2", team2_status: "L", team2_score: 0
+            team1_desc: "Ganador 5", team1_status: "L", team1_score: 0,
+            team2_desc: "Ganador 3", team2_status: "L", team2_score: 0
         },
         {
             id: "match-s2",
-            team1_desc: "Ganador Q3", team1_status: "L", team1_score: 0,
-            team2_desc: "Ganador Q4", team2_status: "L", team2_score: 0
+            team1_desc: "Ganador 6", team1_status: "L", team1_score: 0,
+            team2_desc: "Ganador 4", team2_status: "L", team2_score: 0
         },
 
         // --- GRAN FINAL ---

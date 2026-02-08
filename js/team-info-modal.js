@@ -22,6 +22,10 @@ function openTeamInfoModal(teamName) {
         abbreviation = `(${match[2]})`;
     }
 
+    // Lista de equipos retirados
+    const retiredTeams = ['ROT CARTEL', 'La Raza Dominante'];
+    const isRetired = retiredTeams.includes(teamName);
+
     let html = `
         <button class="close-team-modal" onclick="closeTeamInfoModal()">✕</button>
         <div class="team-info-header">
@@ -32,6 +36,7 @@ function openTeamInfoModal(teamName) {
                 ${displayName}
                 ${abbreviation ? `<span class="team-abbreviation">${abbreviation}</span>` : ''}
             </h2>
+            ${isRetired ? '<div class="team-retired-badge">RETIRADOS</div>' : ''}
         </div>
         <div class="team-info-body">
     `;

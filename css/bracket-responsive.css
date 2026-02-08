@@ -25,6 +25,7 @@
     .match-box {
         width: 240px;
         padding: 12px;
+        margin-bottom: 20px;
     }
 
     .match-num {

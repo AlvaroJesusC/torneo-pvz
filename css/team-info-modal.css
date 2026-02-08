@@ -198,6 +198,22 @@
     letter-spacing: 0.5px;
 }
 
+/* Badge de equipo retirado */
+.team-retired-badge {
+    margin-top: 8px;
+    padding: 4px 12px;
+    background: rgba(239, 68, 68, 0.2);
+    border: 1px solid #ef4444;
+    border-radius: 6px;
+    color: #ef4444;
+    font-size: 0.99rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.3);
+}
+
 /* Body del modal - ahora a la derecha */
 .team-info-body {
     display: flex;

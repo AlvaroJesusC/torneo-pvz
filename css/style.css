@@ -11,6 +11,9 @@
     --font-main: 'Outfit', sans-serif;
 }
 
+* {
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
@@ -95,6 +98,70 @@ body::after {
     }
 }
 
+/* Navbar Styles */
+.navbar {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(40, 40, 102, 0.247);
+    /* Darker background */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+    /* Subtle green border */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    grid-column: 0.1;
+    justify-self: center;
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+}
+
+.pvz {
+    color: #ffffff;
+}
+
+.gw2 {
+    color: var(--accent-color);
+}
+
+.nav-links {
+    grid-column: 3;
+    justify-self: end;
+    margin-right: 250px;
+    /* Ajusta este valor para mover a la izquierda o derecha */
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    /* Wider spacing */
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    color: #b0b0b0;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    /* More spacing */
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: var(--accent-color);
+    text-shadow: 0 0 8px var(--accent-color);
+}
+
 .app-container {
     max-width: 1600px;
     margin: 0 auto;
@@ -134,10 +201,14 @@ body::after {
 /* fila de encabezado */
 .bracket-header {
     display: flex;
-    margin-bottom: 50px;
+    justify-content: center;
+    /* Centrado en lugar de space-around */
+    gap: 60px;
+    /* Gap fijo para alinear con columnas */
+    margin-bottom: 30px;
     background: rgba(255, 255, 255, 0.02);
     border-radius: 12px;
-    padding: 10px;
+    padding: 15px 0;
     backdrop-filter: blur(5px);
     border: 2px solid var(--accent-color);
     box-shadow:
@@ -145,19 +216,26 @@ body::after {
         0 0 40px rgba(16, 185, 129, 0.4),
         0 0 60px rgba(16, 185, 129, 0.2),
         inset 0 0 20px rgba(16, 185, 129, 0.1);
+    width: 1300px;
+    /* Ancho fijo para coincidir con bracket-grid */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .header-item {
-    flex: 1;
+    width: 280px;
+    /* Ancho fijo igual a columnas */
     text-align: center;
-    padding: 15px;
-    font-weight: 700;
+    padding: 10px;
+    font-weight: 900;
     text-transform: uppercase;
-    font-size: 1.2rem;
-    letter-spacing: 2px;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    color: var(--accent-color);
-    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+    text-shadow: 0 0 15px var(--accent-color);
+    color: #ffffff;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    flex: none;
+    /* Evitar que se estiren desiguales */
 }
 
 .header-item:last-child {
@@ -167,49 +245,54 @@ body::after {
 /* cuadricula del bracket */
 .bracket-grid {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    /* Centrado */
+    gap: 60px;
+    /* Gap fijo */
     padding-bottom: 50px;
+    width: 1300px;
+    /* Ancho fijo container */
+    margin: 0 auto;
+    /* Centrado horizontal */
+    position: relative;
 }
 
 .column {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 280px;
+    /* Ancho fijo */
     position: relative;
+    flex: none;
 }
 
 .column.round-1 {
     justify-content: flex-start;
-    padding-top: 5px;
+    /* Removed padding-top for precise alignment */
 }
 
 .column.round-2 {
-    justify-content: center;
-    gap: 20px;
+    justify-content: flex-start;
 }
 
 .column.round-3 {
-    justify-content: center;
-    gap: 20px;
-    padding-top: -125px;
-    margin-top: -80px;
+    justify-content: flex-start;
 }
 
 .column.round-4 {
-    justify-content: center;
-    padding-top: 240px;
+    justify-content: flex-start;
 }
 
 /* estilos de caja de partidas */
 .match-box {
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 0;
     display: flex;
     flex-direction: row;
     background: var(--card-bg);
     border: 1px solid var(--card-border);
     border-radius: 12px;
-    padding: 10px;
+    padding: 15px;
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
@@ -319,6 +402,34 @@ body.view-only .team-controls {
     opacity: 0.7;
 }
 
+/* Equipos que no participan */
+.team.not-participating {
+    background: rgba(50, 50, 50, 0.3);
+    color: #6b7280;
+    border: 2px solid #ef4444;
+    border-left: 3px solid #ef4444;
+    opacity: 0.6;
+    box-shadow:
+        0 0 15px rgba(239, 68, 68, 0.4),
+        0 0 30px rgba(239, 68, 68, 0.2),
+        inset 0 0 10px rgba(239, 68, 68, 0.1);
+}
+
+.team.not-participating .team-name {
+    text-decoration: line-through;
+    color: #6b7280;
+}
+
+.team.not-participating:hover {
+    background: rgba(239, 68, 68, 0.25);
+    border-color: #ef4444;
+    box-shadow:
+        0 0 20px rgba(239, 68, 68, 0.6),
+        0 0 40px rgba(239, 68, 68, 0.3),
+        inset 0 0 15px rgba(239, 68, 68, 0.2);
+    transform: translateX(5px);
+}
+
 /* conectores svg */
 .bracket-connectors {
     position: absolute;
@@ -332,8 +443,9 @@ body.view-only .team-controls {
 
 .connector {
     stroke: var(--line-color);
-    stroke-width: 2;
+    stroke-width: 2.5;
     fill: none;
+    transition: all 0.3s ease;
 }
 
 .champion-display {
@@ -588,7 +700,7 @@ body.view-only .team-controls {
 
 .footer {
     text-align: center;
-    padding: 30px;
+    padding: 50px 30px;
     background: rgba(0, 0, 0, 0.5);
     color: var(--text-secondary);
     font-size: 0.9rem;
@@ -640,4 +752,27 @@ body.view-only .team-controls {
     100% {
         transform: translate(0, 0) rotate(0deg);
     }
+}
+
+/* Container for scrolling if needed */
+.bracket-section {
+    position: relative;
+    width: 100%;
+    padding: 20px 0;
+    overflow-x: auto;
+    /* Permite scroll horizontal si la pantalla es pequeña */
+    min-height: 80vh;
+}
+
+/* Ensure SVG covers the full 1300px width */
+.bracket-connectors {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 1300px;
+    /* Match grid width */
+    pointer-events: none;
+    z-index: 1;
 }
