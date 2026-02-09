@@ -105,6 +105,24 @@ const teamInfoData = {
             "Ford~"
         ]
     },
+    "JFRYZ Team": {
+        fullName: "JFRYZ Team",
+        logo: "logos/JFRYZTeam.jpeg",
+        representatives: [
+            "NA"
+        ],
+        members: [
+            "RodrigoLoky",
+            "ItsMeYuniel",
+            "GeometrycoLoky",
+            "Joaco_Op",
+            "Jusst_Zb"
+        ],
+        substitutes: [
+            "Changovm",
+            "Ford~"
+        ]
+    },
     "Delta Force": {
         fullName: "Delta Force",
         logo: "logos/deltaForce.jpg",
