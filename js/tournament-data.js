@@ -15,7 +15,7 @@ const tournamentConfig = {
         },
         {
             id: "match-r1-2",
-            team1_name: "Reyes del Cementerio", team1_status: "L", team1_score: 0,
+            team1_name: "Reyes del Cementerio", team1_status: "W", team1_score: 2,
             team2_name: "Héroes de la Huerta", team2_status: "L", team2_score: 0
         },
 
@@ -37,7 +37,7 @@ const tournamentConfig = {
         },
         {
             id: "match-r2-4",
-            team1_name: "Al Qaeda", team1_status: "L", team1_score: 0,
+            team1_name: "Al Qaeda", team1_status: "W", team1_score: 2,
             team2_name: "Siege Front", team2_status: "L", team2_score: 0
         },
 
