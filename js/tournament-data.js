@@ -32,7 +32,7 @@ const tournamentConfig = {
         },
         {
             id: "match-r2-3",
-            team1_name: "JFRYZ", team1_status: "L", team1_score: 0,
+            team1_name: "JFRYZ", team1_status: "W", team1_score: 2,
             team1_desc: "Ganador 2", team2_status: "L", team2_score: 0
         },
         {
