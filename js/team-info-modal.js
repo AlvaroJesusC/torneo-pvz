@@ -26,6 +26,10 @@ function openTeamInfoModal(teamName) {
     const retiredTeams = ['ROT CARTEL', 'La Raza Dominante'];
     const isRetired = retiredTeams.includes(teamName);
 
+    // Lista de equipos descalificados
+    const disqualifiedTeams = ['JFRYZ Team', 'JFRYZ', 'Al Qaeda', 'Al-Qaeda Team'];
+    const isDisqualified = disqualifiedTeams.includes(teamName);
+
     let html = `
         <button class="close-team-modal" onclick="closeTeamInfoModal()">✕</button>
         <div class="team-info-header">
@@ -37,6 +41,7 @@ function openTeamInfoModal(teamName) {
                 ${abbreviation ? `<span class="team-abbreviation">${abbreviation}</span>` : ''}
             </h2>
             ${isRetired ? '<div class="team-retired-badge">RETIRADOS</div>' : ''}
+            ${isDisqualified ? '<div class="team-disqualified-badge">DESCALIFICADOS</div>' : ''}
         </div>
         <div class="team-info-body">
     `;
@@ -77,7 +82,33 @@ function openTeamInfoModal(teamName) {
         `;
     }
 
-    html += `</div>`;
+    html += `</div>`; // Cerrar team-info-body
+
+    // Video de pruebas para descalificados - AHORA EN SU PROPIA COLUMNA
+    if (isDisqualified) {
+        let reasons = [];
+        if (teamName.includes("JFRYZ")) {
+            reasons.push("Se puso inmortalidad por error en pleno enfrentamiento :/");
+        } else if (teamName.includes("Al Qaeda") || teamName.includes("Al-Qaeda")) {
+            reasons.push("Se detectó el uso de autoclicker en sheriff en uno de sus miembros de equipo.");
+            reasons.push("Se detectó toxicidad en uno de sus miembros.");
+        }
+
+        html += `
+            <div class="team-info-video-column">
+                <div class="team-info-section cheating-proof-section" style="height: 100%; display: flex; flex-direction: column;">
+                    <h3 class="section-label" style="color: #ef4444; border-color: rgba(239, 68, 68, 0.3);">PRUEBAS DE TRAMPA</h3>
+                    ${reasons.map(reason => `<p class="disqualification-reason">${reason}</p>`).join('')}
+                    <div class="video-container" style="flex: 1; display: flex; align-items: center;">
+                        <video controls width="100%" class="proof-video" style="max-height: 100%;">
+                            <source src="video/asd_6.mp4" type="video/mp4">
+                            Tu navegador no soporta el elemento de video.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
 
     modalContent.innerHTML = html;
     modal.classList.add('show');
@@ -89,6 +120,14 @@ function openTeamInfoModal(teamName) {
 // Función para cerrar el modal
 function closeTeamInfoModal() {
     const modal = document.getElementById('team-info-modal');
+
+    // Detener video si existe
+    const video = modal.querySelector('video');
+    if (video) {
+        video.pause();
+        video.currentTime = 0;
+    }
+
     modal.classList.remove('show');
     document.body.style.overflow = '';
 }

@@ -36,6 +36,21 @@ const teamInfoData = {
             "RDC_Destructor"
         ]
     },
+    // Alias para RDC
+    "R D C": {
+        fullName: "Reyes del Cementerio (RDC)",
+        logo: "logos/rdc.png",
+        representatives: ["RDC_Alex", "RDC_Kevsho"],
+        members: ["RDC_Sorat", "RDC_Esteban", "RDC_Héctor", "RDC_Titan"],
+        substitutes: ["RDC_Erick", "RDC_Destructor"]
+    },
+    "RDC": {
+        fullName: "Reyes del Cementerio (RDC)",
+        logo: "logos/rdc.png",
+        representatives: ["RDC_Alex", "RDC_Kevsho"],
+        members: ["RDC_Sorat", "RDC_Esteban", "RDC_Héctor", "RDC_Titan"],
+        substitutes: ["RDC_Erick", "RDC_Destructor"]
+    },
 
 
     "Vaso de leche": {

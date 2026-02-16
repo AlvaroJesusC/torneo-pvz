@@ -37,20 +37,20 @@ const tournamentConfig = {
         },
         {
             id: "match-r2-4",
-            team1_name: "Al Qaeda", team1_status: "W", team1_score: 2,
-            team2_name: "Siege Front", team2_status: "L", team2_score: 1
+            team1_name: "Al Qaeda", team1_status: "L", team1_score: 0,
+            team2_name: "Siege Front", team2_status: "W", team2_score: "R"
         },
 
         // --- SEMIFINALES ---
         {
             id: "match-s1",
             team1_name: "Los Alquimistas", team1_status: "L", team1_score: 0,
-            team2_name: "Vaso de leche", team2_status: "L", team2_score: 0
+            team2_name: "Vaso de leche", team2_status: "W", team2_score: 2
         },
         {
             id: "match-s2",
             team1_desc: "Ganador 6", team1_status: "L", team1_score: 0,
-            team2_desc: "Ganador 5", team2_status: "L", team2_score: 0
+            team2_desc: "Ganador 5", team2_status: "W", team2_score: "R"
         },
 
         // --- GRAN FINAL ---

@@ -448,6 +448,23 @@ body.view-only .team-controls {
     transition: all 0.3s ease;
 }
 
+/* Estilos personalizados para equipos específicos */
+.team-yellow {
+    background: rgba(255, 215, 0, 0.2) !important;
+    color: #ffd700 !important;
+    border: 2px solid #ffd700 !important;
+    /* Contorno amarillo */
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+.team-red {
+    background: rgba(239, 68, 68, 0.25) !important;
+    color: #fca5a5 !important;
+    border: none !important;
+    border-left: 3px solid #ef4444 !important;
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.1);
+}
+
 .champion-display {
     text-align: center;
     margin-top: 60px;
