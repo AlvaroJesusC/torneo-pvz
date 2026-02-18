@@ -684,7 +684,7 @@ body.view-only .team-controls {
 }
 
 .credits-content.scrolling {
-    animation: scrollCredits 60s linear infinite;
+    animation: scrollCredits 120s linear infinite;
 }
 
 .credits-group {
@@ -799,6 +799,74 @@ body.view-only .team-controls {
         transform: translateY(-100%);
     }
 }
+
+/* Estilos para el botón de ver créditos */
+.btn-credits {
+    background: rgba(255, 215, 0, 0.1);
+    border: 2px solid #FFD700;
+    color: #FFD700;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-family: var(--font-main);
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    backdrop-filter: blur(5px);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    pointer-events: auto;
+    /* Ensure clickable even if container is wacky */
+}
+
+.btn-credits:hover {
+    background: #FFD700;
+    color: #000;
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.6), 0 0 40px rgba(255, 215, 0, 0.4);
+    transform: translateY(-2px) scale(1.05);
+}
+
+.btn-credits .btn-icon {
+    font-size: 1.2rem;
+}
+
+/* Modo "Solo Créditos" del modal */
+.victory-modal.credits-mode .trophy-animation,
+.victory-modal.credits-mode .victory-title,
+.victory-modal.credits-mode .champion-info,
+.victory-modal.credits-mode .champion-column {
+    display: none !important;
+}
+
+.victory-modal.credits-mode .victory-content {
+    max-width: 600px;
+    width: 90%;
+}
+
+.victory-modal.credits-mode .victory-columns {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.victory-modal.credits-mode .credits-column {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.victory-modal.credits-mode .credits-section {
+    opacity: 1;
+}
+
+.victory-modal.credits-mode .credits-scroll {
+    height: 60vh;
+    max-height: 600px;
+}
+
 
 .close-modal {
     position: absolute;

@@ -210,8 +210,10 @@ function generateCredits() {
     let html = `
         <div class="credits-group">
             <h3 class="credits-section-title">ORGANIZACIÓN</h3>
+            <p class="credits-name">Error466</p>
             <p class="credits-name">AlvaroJesus</p>
-            <p class="credits-name">Equipo de Administración</p>
+            <p class="credits-name">Miguel</p>
+            <p class="credits-name">Anyelus</p>
         </div>
     `;
 
@@ -277,7 +279,32 @@ function startCreditsScroll() {
 
 function closeVictoryModal() {
     const modal = document.getElementById('victory-modal');
-    if (modal) modal.classList.remove('show');
+    if (modal) {
+        modal.classList.remove('show');
+
+        setTimeout(() => {
+            modal.classList.remove('credits-mode');
+
+            // Reset dynamic classes
+            const victoryContent = modal.querySelector('.victory-content');
+            if (victoryContent) victoryContent.classList.remove('show-columns');
+
+            const victoryColumns = document.getElementById('victory-columns');
+            if (victoryColumns) victoryColumns.classList.remove('visible');
+
+            const creditsSection = document.getElementById('credits-section');
+            if (creditsSection) creditsSection.classList.remove('visible');
+
+            const trophy = modal.querySelector('.trophy-animation');
+            const title = modal.querySelector('.victory-title');
+            const championInfo = modal.querySelector('.champion-info');
+
+            if (trophy) trophy.classList.remove('content-hidden');
+            if (title) title.classList.remove('content-hidden');
+            if (championInfo) championInfo.classList.remove('content-hidden');
+
+        }, 300);
+    }
 
     // Stop credits music
     const audio = document.getElementById('credits-audio');
@@ -292,9 +319,57 @@ document.addEventListener('click', (e) => {
     if (e.target === modal) closeVictoryModal();
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    // ... existing init code ...
+    if (window.tournamentConfig) {
+        initTournamentState();
+
+        // Controlar visibilidad del botón de créditos
+        const creditsBtnContainer = document.querySelector(".credits-btn-container");
+        if (creditsBtnContainer) {
+            creditsBtnContainer.style.display = window.tournamentConfig.showCreditsButton ? "block" : "none";
+        }
+    }
+
+    // Configurar botón de ver créditos
+    const viewCreditsBtn = document.getElementById("view-credits-btn");
+    if (viewCreditsBtn) {
+        viewCreditsBtn.addEventListener("click", () => {
+            showCreditsOnly();
+        });
+    }
+});
+
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeVictoryModal();
 });
+
+function showCreditsOnly() {
+    const modal = document.getElementById('victory-modal');
+
+    // Generate credits content first
+    generateCredits();
+
+    if (modal) {
+        // Add special class for credits-only mode
+        modal.classList.add('show', 'credits-mode');
+
+        // Ensure credits section is visible
+        const creditsSection = document.getElementById('credits-section');
+        if (creditsSection) {
+            creditsSection.classList.add('visible');
+            // Start auto-scroll animation
+            startCreditsScroll();
+        }
+
+        // Play credits music
+        const audio = document.getElementById('credits-audio');
+        if (audio) {
+            audio.volume = 0.5;
+            audio.play().catch(e => console.log("Audio play failed", e));
+        }
+    }
+}
 
 function initTournamentState() {
     const config = window.tournamentConfig;

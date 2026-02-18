@@ -215,6 +215,13 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Botón de créditos con posicionamiento absoluto para no afectar el flujo -->
+                    <div class="credits-btn-container"
+                        style="position: absolute; top: 350px; left: 0; width: 100%; text-align: center; z-index: 10;">
+                        <button id="view-credits-btn" class="btn-credits">
+                            <span class="btn-icon">📜</span> VER CRÉDITOS
+                        </button>
+                    </div>
                 </div>
 
             </div>
@@ -225,7 +232,7 @@
     <div id="victory-modal" class="victory-modal">
         <div class="victory-content">
             <button class="close-modal" onclick="closeVictoryModal()">✕</button>
-            <div class="trophy-animation">🏆</div>
+            <div class="trophy-animation"><img src="assets/trofeo.svg" alt="Trophy"></div>
             <h1 class="victory-title">¡CAMPEÓN!</h1>
 
             <!-- Champion info (shown initially, then moved to left column) -->

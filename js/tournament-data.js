@@ -4,6 +4,7 @@
 //se vean reflejados en los resultados del torneo en la pagina web, solo eso.  
 
 const tournamentConfig = {
+    showCreditsButton: false, // true = Mostrar botón de créditos, false = Ocultar
     adminMode: true,
     tournamentCancelled: 0, // 0 = Torneo activo, 1 = Torneo cancelado
     matches: [
