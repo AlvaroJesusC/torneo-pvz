@@ -111,6 +111,14 @@ function openTeamInfoModal(teamName) {
     }
 
     modalContent.innerHTML = html;
+
+    // Apply wide-modal class only for disqualified teams
+    if (isDisqualified) {
+        modalContent.classList.add('wide-modal');
+    } else {
+        modalContent.classList.remove('wide-modal');
+    }
+
     modal.classList.add('show');
 
     // Prevenir scroll del body

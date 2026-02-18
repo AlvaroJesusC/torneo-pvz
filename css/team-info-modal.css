@@ -81,10 +81,9 @@
     border: 2px solid var(--accent-color);
     border-radius: 16px;
     padding: 25px 30px;
-    max-width: 1000px;
-    /* Increased to accommodate 3 columns */
-    width: 95%;
-    max-height: 500px;
+    max-width: 700px;
+    width: 85%;
+    max-height: 400px;
     overflow-y: auto;
     position: relative;
     box-shadow:
@@ -95,6 +94,13 @@
     display: flex;
     flex-direction: row;
     gap: 25px;
+}
+
+/* Wider modal for disqualified teams with video */
+.team-info-content.wide-modal {
+    max-width: 1000px;
+    width: 95%;
+    max-height: 500px;
 }
 
 /* ... scrollbar styles ... */

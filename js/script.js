@@ -111,13 +111,180 @@ function resetFutureMatches(fromMatchId) {
 function showVictoryModal(championName) {
     const modal = document.getElementById('victory-modal');
     const championNameEl = document.getElementById('champion-name');
+    const championLogoEl = document.getElementById('champion-logo');
+
     if (championNameEl) championNameEl.textContent = championName;
-    if (modal) modal.classList.add('show');
+
+    // Get team logo from team-info-data
+    if (championLogoEl && window.teamInfoData && window.teamInfoData[championName]) {
+        championLogoEl.src = window.teamInfoData[championName].logo;
+        championLogoEl.style.display = 'block';
+    } else if (championLogoEl) {
+        championLogoEl.style.display = 'none';
+    }
+
+    // Generate credits content
+    generateCredits();
+
+    if (modal) {
+        modal.classList.add('show');
+
+        // Sequence for smooth transition:
+        // 1. Fade out current content (3.5s)
+        // 2. Move elements + expand layout (4.0s)
+        // 3. Fade in new layout
+
+        setTimeout(() => {
+            const trophy = modal.querySelector('.trophy-animation');
+            const title = modal.querySelector('.victory-title');
+            const championInfo = modal.querySelector('.champion-info');
+
+            if (trophy) trophy.classList.add('content-hidden');
+            if (title) title.classList.add('content-hidden');
+            if (championInfo) championInfo.classList.add('content-hidden');
+        }, 3500);
+
+        setTimeout(() => {
+            const victoryContent = modal.querySelector('.victory-content');
+            const victoryColumns = document.getElementById('victory-columns');
+            const championColumn = modal.querySelector('.champion-column');
+            const championInfo = modal.querySelector('.champion-info');
+            const creditsSection = document.getElementById('credits-section');
+
+            // Move champion info AND trophy/title to left column
+            const trophy = modal.querySelector('.trophy-animation');
+            const title = modal.querySelector('.victory-title');
+
+            if (championColumn) {
+                if (trophy) {
+                    championColumn.appendChild(trophy);
+                    // Force reflow
+                    void trophy.offsetWidth;
+                    trophy.classList.remove('content-hidden');
+                }
+                if (title) {
+                    championColumn.appendChild(title);
+                    void title.offsetWidth;
+                    title.classList.remove('content-hidden');
+                }
+                if (championInfo) {
+                    championColumn.appendChild(championInfo);
+                    void championInfo.offsetWidth;
+                    championInfo.classList.remove('content-hidden');
+                }
+            }
+
+            if (victoryContent) victoryContent.classList.add('show-columns');
+            if (victoryColumns) victoryColumns.classList.add('visible');
+            if (creditsSection) {
+                creditsSection.classList.add('visible');
+                // Start auto-scroll animation
+                startCreditsScroll();
+
+                // Play credits music
+                const audio = document.getElementById('credits-audio');
+                if (audio) {
+                    audio.volume = 0.5; // Set volume level
+                    const playPromise = audio.play();
+                    if (playPromise !== undefined) {
+                        playPromise.then(_ => {
+                            // Automatic playback started!
+                            console.log("Audio playing successfully");
+                        }).catch(error => {
+                            console.error("Audio play failed:", error);
+                            // Auto-play was prevented
+                        });
+                    }
+                } else {
+                    console.error("Audio element 'credits-audio' not found!");
+                }
+            }
+        }, 4000);
+    }
+}
+
+function generateCredits() {
+    const creditsContent = document.getElementById('credits-content');
+    if (!creditsContent || !window.teamInfoData) return;
+
+    let html = `
+        <div class="credits-group">
+            <h3 class="credits-section-title">ORGANIZACIÓN</h3>
+            <p class="credits-name">AlvaroJesus</p>
+            <p class="credits-name">Equipo de Administración</p>
+        </div>
+    `;
+
+    // Add all teams and their members
+    html += `<div class="credits-group">
+        <h3 class="credits-section-title">PARTICIPANTES</h3>
+    `;
+
+    for (const teamName in window.teamInfoData) {
+        const team = window.teamInfoData[teamName];
+
+        html += `
+            <div class="credits-team">
+                <h4 class="credits-team-name">${team.fullName}</h4>
+        `;
+
+        // Representatives
+        if (team.representatives && team.representatives.length > 0) {
+            html += `<p class="credits-role">Representantes:</p>`;
+            team.representatives.forEach(rep => {
+                html += `<p class="credits-member">${rep}</p>`;
+            });
+        }
+
+        // Members
+        if (team.members && team.members.length > 0) {
+            html += `<p class="credits-role">Integrantes:</p>`;
+            team.members.forEach(member => {
+                html += `<p class="credits-member">${member}</p>`;
+            });
+        }
+
+        // Substitutes
+        if (team.substitutes && team.substitutes.length > 0) {
+            html += `<p class="credits-role">Suplentes:</p>`;
+            team.substitutes.forEach(sub => {
+                html += `<p class="credits-member">${sub}</p>`;
+            });
+        }
+
+        html += `</div>`;
+    }
+
+    html += `</div>`;
+
+    html += `
+        <div class="credits-group">
+            <h3 class="credits-section-title">GRACIAS POR PARTICIPAR</h3>
+            <p class="credits-name">PVZ GW2 Tournament 2024</p>
+        </div>
+    `;
+
+    creditsContent.innerHTML = html;
+}
+
+function startCreditsScroll() {
+    const creditsContent = document.getElementById('credits-content');
+    if (!creditsContent) return;
+
+    // Add scrolling animation class
+    creditsContent.classList.add('scrolling');
 }
 
 function closeVictoryModal() {
     const modal = document.getElementById('victory-modal');
     if (modal) modal.classList.remove('show');
+
+    // Stop credits music
+    const audio = document.getElementById('credits-audio');
+    if (audio) {
+        audio.pause();
+        audio.currentTime = 0;
+    }
 }
 
 document.addEventListener('click', (e) => {
