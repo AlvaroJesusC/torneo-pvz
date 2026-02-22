@@ -262,7 +262,7 @@ function generateCredits() {
     html += `
         <div class="credits-group">
             <h3 class="credits-section-title">GRACIAS POR PARTICIPAR</h3>
-            <p class="credits-name">PVZ GW2 Tournament 2024</p>
+            <p class="credits-name">PVZ GW2 Torneo 2026</p>
         </div>
     `;
 
