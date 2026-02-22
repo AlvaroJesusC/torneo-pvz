@@ -4,7 +4,7 @@
 //se vean reflejados en los resultados del torneo en la pagina web, solo eso.  
 
 const tournamentConfig = {
-    showCreditsButton: false, // true = Mostrar botón de créditos, false = Ocultar
+    showCreditsButton: true, // true = Mostrar botón de créditos, false = Ocultar
     adminMode: true,
     tournamentCancelled: 0, // 0 = Torneo activo, 1 = Torneo cancelado
     matches: [
@@ -57,7 +57,7 @@ const tournamentConfig = {
         // --- GRAN FINAL ---
         {
             id: "match-final",
-            team1_desc: "Finalista 1", team1_status: "L", team1_score: 0,
+            team1_desc: "Finalista 1", team1_status: "W", team1_score: 3,
             team2_desc: "Finalista 2", team2_status: "L", team2_score: 0
         }
     ]
